@@ -49,10 +49,24 @@ namespace TestSystemSharp
         //Конструктор через точку начала, длинну вектора и вектор, перпендикулярный данному
         public Vector(Point PointBegin, double Length, Vector v)
         {
+            //Из скалярного произведения
             double x = -(Length * v.PointTopVect.Y) / v.Length;
             double y = (Length * v.PointTopVect.X) / v.Length;
+
             this.PointBegin = PointBegin;
             this.PointEnd = new Point(x, y) + PointBegin;
+        }
+
+        //Конструктор через вектор, коллинеарный данному, лежащий на той же прямой, что и данный и 
+        //начало которого является началом данного вектора и через длинну данного вектора
+        public Vector(Vector beg, double Length)
+        {
+            //Из скалярного произведения
+            double x = (Length * beg.PointTopVect.X)/ beg.Length;
+            double y = (Length * beg.PointTopVect.Y) / beg.Length;
+
+            this.PointBegin = beg.PointBegin;
+            this.PointEnd = beg.PointBegin + new Point(x, y);
         }
 
         //Для случая, когда изменяется точка одного из концов вектора

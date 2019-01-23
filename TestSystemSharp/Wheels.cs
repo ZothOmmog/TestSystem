@@ -19,13 +19,6 @@ namespace TestSystemSharp
             this.LeftWheel = new Point(-WheelsDistance / 2, 0);
             this.RightWheel = new Point(WheelsDistance / 2, 0);
         }
-
-        //private Point NewPosition(Vector other_this)
-        //{
-        //    Vector perp = new Vector(other_this.PointBegin, 1, other_this);
-        //    Vector new_pos = new Vector(perp.PointBegin, WheelsDistance, perp);
-        //    return new_pos.PointEnd;
-        //}
          
         public void ChangePosition(double speed_left, double speed_right)
         {
@@ -43,17 +36,13 @@ namespace TestSystemSharp
 
         private void TurnLeft()
         {
-            Vector left_right = new Vector(LeftWheel, RightWheel);
-            Vector buf = -new Vector(LeftWheel, 1, left_right);
-            Vector new_position_right = new Vector(buf.PointEnd, WheelsDistance, buf);
+            Vector new_position_right = new Vector(new Vector(LeftWheel, RightWheel), WheelsDistance);
             RightWheel = new_position_right.PointEnd;
         }
 
         private void TurnRight()
         {
-            Vector left_right = new Vector(LeftWheel, RightWheel);
-            Vector buf = new Vector(RightWheel, 1, left_right);
-            Vector new_position_left = new Vector(buf.PointBegin, WheelsDistance, buf);
+            Vector new_position_left = new Vector(new Vector(RightWheel, LeftWheel), WheelsDistance);
             LeftWheel = new_position_left.PointEnd;
         }
 
