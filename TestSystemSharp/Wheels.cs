@@ -9,8 +9,8 @@ namespace TestSystemSharp
     class Wheels
     {
         public double WheelsDistance { get; private set; }
-        public Point LeftWheel { get; private set; }
-        public Point RightWheel { get; private set; }
+        public Point LeftWheel { get; set; }
+        public Point RightWheel { get; set; }
         public Point Center { get { return new Point((LeftWheel.X + RightWheel.X) / 2, (LeftWheel.Y + RightWheel.Y) / 2); } }
 
         public Wheels(double WheelsDistance)

@@ -22,6 +22,7 @@ namespace TestSystemSharp
             {
                 sw.Write(" '{0}' u {1}:{2} w l title '{3}'", data, j, j + 1, titles[i]);
                 if (i < kol_graph - 1) sw.Write(',');
+                else sw.Write(", '{0}' u {1}:{2} w l title 'wheels'", data, j + 2, j + 3);
             }
 
             sw.Write("\nwhile(1){}");

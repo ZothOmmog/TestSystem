@@ -42,10 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArcRegulate.cs" />
     <Compile Include="GnuPlot.cs" />
     <Compile Include="Point.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TriangleRegulate.cs" />
     <Compile Include="Vector.cs" />
     <Compile Include="Wheels.cs" />
   </ItemGroup>
